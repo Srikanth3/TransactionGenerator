@@ -36,7 +36,25 @@ public class Customer {
         this.firstName = firstName.toString();
         this.lastName = lastName.toString();
 
+        // dateOfBirth
+        // streetAddress
+        // city
+        // state
 
+        // zip
+
+        // primaryContact
+        StringBuilder primaryContact = new StringBuilder("");
+        primaryContact.append(random.nextInt(9) + 1);
+        for(int i = 0 ; i < 9 ; i++) {
+            primaryContact.append(random.nextInt(10));
+        }
+        this.primaryContact = primaryContact.toString();
+
+        // email
+        this.email = this.firstName + "." + this.lastName + "@cloudwick.com";
+
+        // creditCards
     }
 
     public String getId() {
