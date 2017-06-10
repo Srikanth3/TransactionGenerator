@@ -77,7 +77,8 @@ public class Customer {
         this.primaryContact = primaryContact.toString();
 
         // email
-        this.email = this.firstName + "." + this.lastName + "@cloudwick.com";
+        this.email = this.firstName.toLowerCase() + "." +
+                this.lastName.toLowerCase() + "@cloudwick.com";
 
         // creditCards
         creditCards = new HashSet<>();
