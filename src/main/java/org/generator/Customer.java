@@ -16,6 +16,31 @@ public class Customer {
     private String email;
     private Set<CreditCard> creditCards;
 
+    @Override
+    public String toString() {
+        StringBuilder returnString = new StringBuilder("Customer{" +
+                "id='" + id + '\'' +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", dateOfBirth='" + dateOfBirth + '\'' +
+                ", streetAddress='" + streetAddress + '\'' +
+                ", city='" + city + '\'' +
+                ", state='" + state + '\'' +
+                ", zip='" + zip + '\'' +
+                ", primaryContact='" + primaryContact + '\'' +
+                ", email='" + email + '\'' +
+                ", creditCards=[");
+
+        for(CreditCard creditCard : creditCards) {
+            returnString.append(creditCard + "|");
+        }
+
+        returnString.deleteCharAt(returnString.length() - 1);
+        returnString.append("]}");
+
+        return returnString.toString();
+    }
+
     public Customer() throws ParseException {
         Random random = new Random();
 

@@ -1,10 +1,11 @@
 package org.generator;
 
+import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.List;
 
 public class Generator {
-    public static void main(String ... args) {
+    public static void main(String ... args) throws ParseException {
         long numberOfCustomers = 0;
         long numberOfTransactions = 0;
 

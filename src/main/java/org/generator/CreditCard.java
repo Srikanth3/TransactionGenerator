@@ -55,6 +55,16 @@ public class CreditCard {
         this.type = types.get(random.nextInt(types.size()));
     }
 
+    @Override
+    public String toString() {
+        return "CreditCard{" +
+                "creditCardNumber='" + creditCardNumber + '\'' +
+                ", expirationDate='" + expirationDate + '\'' +
+                ", cvv='" + cvv + '\'' +
+                ", type='" + type + '\'' +
+                '}';
+    }
+
     public String getCreditCardNumber() {
         return creditCardNumber;
     }
