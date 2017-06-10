@@ -1,5 +1,6 @@
 package org.generator;
 
+import java.text.ParseException;
 import java.util.*;
 
 public class Customer {
@@ -15,7 +16,7 @@ public class Customer {
     private String email;
     private Set<CreditCard> creditCards;
 
-    public Customer() {
+    public Customer() throws ParseException {
         Random random = new Random();
 
         // Name Generator
@@ -40,7 +41,6 @@ public class Customer {
         // streetAddress
         // city
         // state
-
         // zip
 
         // primaryContact
@@ -55,6 +55,12 @@ public class Customer {
         this.email = this.firstName + "." + this.lastName + "@cloudwick.com";
 
         // creditCards
+        creditCards = new HashSet<>();
+        // Average 1 - 10 credit cards per user
+        int numberOdfCreditCards = random.nextInt(10) + 1;
+        for(int i = 0 ; i < numberOdfCreditCards ; i++) {
+            creditCards.add(new CreditCard());
+        }
     }
 
     public String getId() {
