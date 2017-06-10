@@ -50,12 +50,12 @@ public class Customer {
 
         StringBuilder firstName = new StringBuilder("");
         for(int i = 0 ; i < firstNameLength ; i++) {
-            firstName.append(random.nextInt(26) + 65);
+            firstName.append(((char)(random.nextInt(26) + 65)));
         }
 
         StringBuilder lastName = new StringBuilder("");
         for(int i = 0 ; i < lastNameLength ; i++) {
-            lastName.append(random.nextInt(26) + 65);
+            lastName.append(((char)(random.nextInt(26) + 65)));
 
         }
 
