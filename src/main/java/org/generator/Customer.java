@@ -15,6 +15,8 @@ public class Customer {
     private String zip;
     private String primaryContact;
     private String email;
+    private double meanBuyingPower;
+    private double stdBuyingPower;
     private Set<CreditCard> creditCards;
 
     @Override
@@ -43,7 +45,7 @@ public class Customer {
         return returnString.toString();
     }
 
-    public Customer() throws ParseException {
+    public Customer(double ... buyingPower) throws ParseException {
         Random random = new Random();
 
         // Name Generator
@@ -89,6 +91,15 @@ public class Customer {
         // email
         this.email = this.firstName.toLowerCase() + "." +
                 this.lastName.toLowerCase() + "@cloudwick.com";
+
+        // Buying Power
+        if(buyingPower.length == 2) {
+            this.meanBuyingPower = buyingPower[0];
+            this.stdBuyingPower = buyingPower[1];
+        } else {
+            this.meanBuyingPower = 200.0;
+            this.stdBuyingPower = 50.0;
+        }
 
         // creditCards
         creditCards = new HashSet<>();
@@ -185,6 +196,22 @@ public class Customer {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public double getMeanBuyingPower() {
+        return meanBuyingPower;
+    }
+
+    public void setMeanBuyingPower(double meanBuyingPower) {
+        this.meanBuyingPower = meanBuyingPower;
+    }
+
+    public double getStdBuyingPower() {
+        return stdBuyingPower;
+    }
+
+    public void setStdBuyingPower(double stdBuyingPower) {
+        this.stdBuyingPower = stdBuyingPower;
     }
 
     public Set<CreditCard> getCreditCards() {
