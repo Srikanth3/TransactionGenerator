@@ -7,6 +7,7 @@ public class Customer {
     private String id;
     private String firstName;
     private String lastName;
+    private String gender;
     private String dateOfBirth;
     private String streetAddress;
     private String city;
@@ -22,6 +23,7 @@ public class Customer {
                 "id='" + id + '\'' +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
+                ", gender='" + gender + '\'' +
                 ", dateOfBirth='" + dateOfBirth + '\'' +
                 ", streetAddress='" + streetAddress + '\'' +
                 ", city='" + city + '\'' +
@@ -61,6 +63,14 @@ public class Customer {
 
         this.firstName = firstName.toString();
         this.lastName = lastName.toString();
+
+        // gender
+        List<String> genders = new ArrayList<>();
+        genders.add("Male");
+        genders.add("Female");
+        genders.add("Other");
+        Collections.shuffle(genders);
+        this.gender = genders.get(0);
 
         // dateOfBirth
         // streetAddress
@@ -111,6 +121,14 @@ public class Customer {
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
     }
 
     public String getDateOfBirth() {
