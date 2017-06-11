@@ -72,11 +72,11 @@ public class Customer {
         Collections.shuffle(genders);
         this.gender = genders.get(0);
 
-        // dateOfBirth
-        // streetAddress
-        // city
-        // state
-        // zip
+        // TODO: dateOfBirth
+        // TODO: streetAddress
+        // TODO: city
+        // TODO: state
+        // TODO: zip
 
         // primaryContact
         StringBuilder primaryContact = new StringBuilder("");

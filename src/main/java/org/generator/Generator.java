@@ -18,13 +18,15 @@ public class Generator {
         }
 
         Generator generator = new Generator();
-        List<Transaction> transactions = generator.generate(numberOfCustomers, numberOfTransactions);
+        List<Transaction> transactions =
+                generator.generate(numberOfCustomers, numberOfTransactions);
     }
 
-    List<Transaction> generate(long numberOfCustomers, long numberOfTransactions) {
+    List<Transaction> generate(long numberOfCustomers, long numberOfTransactions)
+            throws ParseException {
         List<Transaction> transactions = new ArrayList<>();
         for(long i = 0 ; i < numberOfTransactions ; i++) {
-            Transaction transaction = new Transaction();
+            Transaction transaction = new Transaction(100, 10);
         }
 
         return transactions;
