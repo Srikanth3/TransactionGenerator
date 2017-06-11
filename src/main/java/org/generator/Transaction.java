@@ -12,7 +12,7 @@ public class Transaction {
     private Merchant merchant;
     private double amount;
     private Timestamp timestamp;
-    private String transactionType;
+    private String type;
     private boolean flag;
     private double latitude;
     private double longitude;
@@ -41,19 +41,20 @@ public class Transaction {
 
         // TODO: Random Merchant Address
 
-        List<String> transactionTypes = new ArrayList<>();
-        transactionTypes.add("Travel");
-        transactionTypes.add("Restaurants");
-        transactionTypes.add("Electronics");
-        transactionTypes.add("Hotels");
-        transactionTypes.add("Movie");
-        transactionTypes.add("Furniture");
-        transactionTypes.add("Automobile");
-        transactionTypes.add("Sports");
-        transactionTypes.add("Others");
-        Collections.shuffle(transactionTypes);
+        // Transaction Type
+        List<String> types = new ArrayList<>();
+        types.add("Travel");
+        types.add("Restaurants");
+        types.add("Electronics");
+        types.add("Hotels");
+        types.add("Movie");
+        types.add("Furniture");
+        types.add("Automobile");
+        types.add("Sports");
+        types.add("Others");
+        Collections.shuffle(types);
 
-        this.transactionType = transactionTypes.get(0);
+        this.type = types.get(0);
     }
 
     public Customer getCustomer() {
@@ -96,12 +97,12 @@ public class Transaction {
         this.timestamp = timestamp;
     }
 
-    public String getTransactionType() {
-        return transactionType;
+    public String getType() {
+        return type;
     }
 
-    public void setTransactionType(String transactionType) {
-        this.transactionType = transactionType;
+    public void setType(String type) {
+        this.type = type;
     }
 
     public boolean isFlag() {
