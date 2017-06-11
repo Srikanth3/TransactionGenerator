@@ -70,7 +70,7 @@ public class Customer {
         List<String> genders = new ArrayList<>();
         genders.add("Male");
         genders.add("Female");
-        genders.add("Other");
+        genders.add("Not Specified");
         Collections.shuffle(genders);
         this.gender = genders.get(0);
 
