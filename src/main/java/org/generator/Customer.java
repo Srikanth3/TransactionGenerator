@@ -104,8 +104,8 @@ public class Customer {
         // creditCards
         creditCards = new HashSet<>();
         // Average 1 - 10 credit cards per user
-        int numberOdfCreditCards = random.nextInt(10) + 1;
-        for(int i = 0 ; i < numberOdfCreditCards ; i++) {
+        int numberOfCreditCards = random.nextInt(10) + 1;
+        for(int i = 0 ; i < numberOfCreditCards ; i++) {
             creditCards.add(new CreditCard());
         }
     }
