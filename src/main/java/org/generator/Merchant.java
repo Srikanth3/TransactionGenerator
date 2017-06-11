@@ -1,26 +1,44 @@
 package org.generator;
 
-import java.util.Random;
+import java.util.*;
 
 public class Merchant {
-    private String merchantName;
-    private String merchantStreet;
-    private String merchantCity;
-    private String merchantState;
-    private String merchantZip;
+    private String name;
+    private Set<String> type;
+    private String street;
+    private String city;
+    private String state;
+    private String zip;
 
     public Merchant() {
         Random random = new Random();
 
         // Merchant Name
-        int merchantNameLength = random.nextInt(15) + 7;
+        int nameLength = random.nextInt(15) + 7;
 
-        StringBuilder merchantName = new StringBuilder("");
-        for(int i = 0 ; i < merchantNameLength ; i++) {
-            merchantName.append(((char)(random.nextInt(26) + 65)));
+        StringBuilder name = new StringBuilder("");
+        for(int i = 0 ; i < nameLength ; i++) {
+            name.append(((char)(random.nextInt(26) + 65)));
         }
 
-        this.merchantName = merchantName.toString();
+        this.name = name.toString();
+
+        // Types of transactions Merchant Supports
+        List<String> types = new ArrayList<>();
+        types.add("Travel");
+        types.add("Restaurants");
+        types.add("Electronics");
+        types.add("Hotels");
+        types.add("Movie");
+        types.add("Furniture");
+        types.add("Automobile");
+        types.add("Sports");
+        types.add("Others");
+        Collections.shuffle(types);
+        int numberOfTypes = random.nextInt(types.size()) + 1;
+        for(int i = 0 ; i < numberOfTypes ; i++) {
+            this.type.add(types.get(i));
+        }
 
         // TODO: Random Merchant Address
     }
@@ -28,51 +46,60 @@ public class Merchant {
     @Override
     public String toString() {
         return "Merchant{" +
-                "merchantName='" + merchantName + '\'' +
-                ", merchantStreet='" + merchantStreet + '\'' +
-                ", merchantCity='" + merchantCity + '\'' +
-                ", merchantState='" + merchantState + '\'' +
-                ", merchantZip='" + merchantZip + '\'' +
+                "name='" + name + '\'' +
+                ", type=" + type +
+                ", street='" + street + '\'' +
+                ", city='" + city + '\'' +
+                ", state='" + state + '\'' +
+                ", zip='" + zip + '\'' +
                 '}';
     }
 
-    public String getMerchantName() {
-        return merchantName;
+    public String getName() {
+        return name;
     }
 
-    public void setMerchantName(String merchantName) {
-        this.merchantName = merchantName;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getMerchantStreet() {
-        return merchantStreet;
+    public Set<String> getType() {
+        return type;
     }
 
-    public void setMerchantStreet(String merchantStreet) {
-        this.merchantStreet = merchantStreet;
+    public void setType(Set<String> type) {
+        this.type = type;
     }
 
-    public String getMerchantCity() {
-        return merchantCity;
+    public String getStreet() {
+        return street;
     }
 
-    public void setMerchantCity(String merchantCity) {
-        this.merchantCity = merchantCity;
+    public void setStreet(String street) {
+        this.street = street;
     }
 
-    public String getMerchantState() {
-        return merchantState;
+    public String getCity() {
+        return city;
     }
 
-    public void setMerchantState(String merchantState) {
-        this.merchantState = merchantState;
+    public void setCity(String city) {
+        this.city = city;
     }
 
-    public String getMerchantZip() {
-        return merchantZip;
+    public String getState() {
+        return state;
     }
 
-    public void setMerchantZip(String merchantZip) {
-        this.merchantZip = merchantZip;
+    public void setState(String state) {
+        this.state = state;
+    }
+
+    public String getZip() {
+        return zip;
+    }
+
+    public void setZip(String zip) {
+        this.zip = zip;
     }
 }
