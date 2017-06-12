@@ -74,7 +74,26 @@ public class Customer {
         Collections.shuffle(genders);
         this.gender = genders.get(0);
 
-        // TODO: dateOfBirth
+        int day = random.nextInt(365) + 1 ;
+        int year = random.nextInt(43) + 1956 ;
+        Calendar calendar = Calendar.getInstance();
+        calendar.set(Calendar.YEAR, year);
+        calendar.set(Calendar.DAY_OF_YEAR, day);
+        Date randomDob = calendar.getTime();
+
+        // TODO: Take care of the deprecation later
+        int month = randomDob.getMonth();
+        String monthString = "";
+        if(month < 9){
+            monthString = "0" + String.valueOf(month + 1);
+        }
+        else monthString = String.valueOf(month + 1);
+
+        String dateString = randomDob.toString().split(" ")[2];
+        String yearString = randomDob.toString().split(" ")[5];
+
+        this.dateOfBirth = yearString + "/" + monthString + "/" + dateString;
+
         // TODO: streetAddress
         // TODO: city
         // TODO: state
