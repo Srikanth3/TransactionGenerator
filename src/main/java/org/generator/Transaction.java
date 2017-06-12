@@ -5,6 +5,7 @@ import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Random;
 
 public class Transaction {
     private Customer customer;
@@ -25,8 +26,9 @@ public class Transaction {
     // Latitude : 25 -> 48
     // Longitude: -124 -> -67
 
-    public Transaction(double meanAmount, double standardDeviationAmount)
+    public Transaction(double ... buyingPower)
             throws ParseException {
+        Random random = new Random();
         // TODO: Randomly select from the Customers
 
         // TODO: Randomly select from one of the Credit Cards of the Customers
@@ -34,6 +36,8 @@ public class Transaction {
         // TODO: Randomly select from Merchants
 
         // TODO: Random Amount based on mean and standard deviation
+        this.amount = random.nextGaussian() * customer.getStdBuyingPower() +
+                customer.getMeanBuyingPower();
 
         // TODO: Random timestamp
 
@@ -42,19 +46,8 @@ public class Transaction {
         // TODO: Random Merchant Address
 
         // Transaction Type
-        List<String> types = new ArrayList<>();
-        types.add("Travel");
-        types.add("Restaurants");
-        types.add("Electronics");
-        types.add("Hotels");
-        types.add("Movie");
-        types.add("Furniture");
-        types.add("Automobile");
-        types.add("Sports");
-        types.add("Others");
-        Collections.shuffle(types);
-
-        this.type = types.get(0);
+        List<String> types = merchant.getTypes();
+        this.type = types.get(random.nextInt(types.size()));
     }
 
     public Customer getCustomer() {

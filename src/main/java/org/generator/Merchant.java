@@ -4,7 +4,7 @@ import java.util.*;
 
 public class Merchant {
     private String name;
-    private Set<String> type;
+    private List<String> types;
     private String street;
     private String city;
     private String state;
@@ -34,10 +34,11 @@ public class Merchant {
         types.add("Automobile");
         types.add("Sports");
         types.add("Others");
-        Collections.shuffle(types);
+
         int numberOfTypes = random.nextInt(types.size()) + 1;
+        this.types = new ArrayList<>();
         for(int i = 0 ; i < numberOfTypes ; i++) {
-            this.type.add(types.get(i));
+            this.types.add(types.get(random.nextInt(types.size())));
         }
 
         // TODO: Random Merchant Address
@@ -47,7 +48,7 @@ public class Merchant {
     public String toString() {
         return "Merchant{" +
                 "name='" + name + '\'' +
-                ", type=" + type +
+                ", type=" + types +
                 ", street='" + street + '\'' +
                 ", city='" + city + '\'' +
                 ", state='" + state + '\'' +
@@ -63,12 +64,12 @@ public class Merchant {
         this.name = name;
     }
 
-    public Set<String> getType() {
-        return type;
+    public List<String> getTypes() {
+        return types;
     }
 
-    public void setType(Set<String> type) {
-        this.type = type;
+    public void setType(List<String> types) {
+        this.types = types;
     }
 
     public String getStreet() {
