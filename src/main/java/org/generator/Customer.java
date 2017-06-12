@@ -48,6 +48,9 @@ public class Customer {
     public Customer(double ... buyingPower) throws ParseException {
         Random random = new Random();
 
+        // Generate id
+        this.id = UUID.randomUUID().toString();
+
         // Name Generator
         int firstNameLength = random.nextInt(7) + 5;
         int lastNameLength = random.nextInt(7) + 5;
