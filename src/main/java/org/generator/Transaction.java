@@ -18,14 +18,6 @@ public class Transaction {
     private double latitude;
     private double longitude;
 
-    // NW: 48.076515, -124.100106
-    // SW: 32.986790, -117.249322
-    // NE: 44.846800, -67.010240
-    // SE: 25.121644, -80.802049
-
-    // Latitude : 25 -> 48
-    // Longitude: -124 -> -67
-
     public Transaction(double ... buyingPower)
             throws ParseException {
         Random random = new Random();
