@@ -35,11 +35,12 @@ public class Transaction {
 
         // TODO: Randomly select from Merchants
 
-        // TODO: Random Amount based on mean and standard deviation
+        // Random Amount based on mean and standard deviation
         this.amount = random.nextGaussian() * customer.getStdBuyingPower() +
                 customer.getMeanBuyingPower();
 
-        // TODO: Random timestamp
+        // Current timestamp
+        this.timestamp =  new Timestamp(System.currentTimeMillis());
 
         // TODO: Random Merchant Name
 
